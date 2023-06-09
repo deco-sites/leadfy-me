@@ -1,4 +1,4 @@
-# Deco Start — live template
+# Leadfy-me — live template
 
 Welcome to your live site!
 
