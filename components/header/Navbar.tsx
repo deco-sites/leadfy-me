@@ -110,9 +110,7 @@ function Navbar({ logo, items }: { logo: Image; items: INavItem[] }) {
         )}
 
         <div class="flex max-md:mt-4 max-md:mb-6 max-md:block">
-          {items.map((item) => (
-            <NavItem item={item} onClick={closeMenu} />
-          ))}
+          {items.map((item) => <NavItem item={item} onClick={closeMenu} />)}
         </div>
       </ul>
 

@@ -1,7 +1,7 @@
 import Button from "deco-sites/leadfy-me/components/ui/Button.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 
-import type { Image, HTML } from "deco-sites/std/components/types.ts";
+import type { HTML, Image } from "deco-sites/std/components/types.ts";
 
 export interface Props {
   /**

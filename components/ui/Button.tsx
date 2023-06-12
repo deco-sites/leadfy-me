@@ -15,7 +15,7 @@ const secondary =
 const Button = forwardRef<HTMLButtonElement, Props>(
   (
     { type = "button", class: _class = "", buttonType = "primary", ...props },
-    ref
+    ref,
   ) => {
     const buttonClass = buttonType === "primary" ? primary : secondary;
 
@@ -28,7 +28,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(
         ref={ref}
       />
     );
-  }
+  },
 );
 
 export default Button;
