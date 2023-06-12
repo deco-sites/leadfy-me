@@ -22,7 +22,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(
     return (
       <button
         {...props}
-        className={`custom-button flex items-center justify-center max-md:h-full max-md:w-[300px] max-md:pt-[60px] max-md:px-[25px] ${_class} ${common} ${buttonClass}]`}
+        className={`custom-button ${_class} ${common} ${buttonClass}]`}
         type={type}
         ref={ref}
       />
