@@ -12,7 +12,6 @@
           "type": "string",
           "not": {
             "enum": [
-              "deco-sites/leadfy-me/functions/LoadGitHubRaw.ts",
               "deco-sites/std/functions/butterCMSAds.ts",
               "deco-sites/std/functions/butterCMSBrands.ts",
               "deco-sites/std/functions/butterCMSCategories.ts",
@@ -61,6 +60,8 @@
               "deco-sites/std/loaders/vtex/proxy.ts",
               "deco-sites/std/loaders/vtex/user.ts",
               "deco-sites/std/loaders/vtex/wishlist.ts",
+              "./islands/Header.tsx",
+              "./islands/Investimento.tsx",
               "$live/handlers/devPage.ts",
               "$live/handlers/fresh.ts",
               "$live/handlers/proxy.ts",
@@ -72,9 +73,15 @@
               "$live/sections/PageInclude.tsx",
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
+              "deco-sites/leadfy-me/sections/Anuncie.tsx",
+              "deco-sites/leadfy-me/sections/Blog.tsx",
               "deco-sites/leadfy-me/sections/DesignSystem.tsx",
-              "deco-sites/leadfy-me/sections/GetStarted.tsx",
+              "deco-sites/leadfy-me/sections/Footer.tsx",
               "deco-sites/leadfy-me/sections/Head.tsx",
+              "deco-sites/leadfy-me/sections/Header.tsx",
+              "deco-sites/leadfy-me/sections/Intro.tsx",
+              "deco-sites/leadfy-me/sections/Investimento.tsx",
+              "deco-sites/leadfy-me/sections/Vendas.tsx",
               "deco-sites/std/sections/Analytics.tsx",
               "deco-sites/std/sections/configButterCMS.global.tsx",
               "deco-sites/std/sections/configOCC.global.tsx",
@@ -121,32 +128,6 @@
           }
         }
       }
-    },
-    "ZGVjby1zaXRlcy9sZWFkZnktbWUvZnVuY3Rpb25zL0xvYWRHaXRIdWJSYXcudHM=@Props": {
-      "type": "object",
-      "properties": {
-        "repo": {
-          "type": "string",
-          "description": "Complete user/repo format",
-          "title": "Repo"
-        },
-        "branch": {
-          "type": "string",
-          "description": "Branch",
-          "title": "Branch"
-        },
-        "path": {
-          "type": "string",
-          "description": "Path to fetch, or leave blank and add :path route param.",
-          "title": "Path"
-        }
-      },
-      "required": [
-        "repo",
-        "branch",
-        "path"
-      ],
-      "title": "deco-sites/leadfy-me/functions/LoadGitHubRaw.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category": {
       "type": "object",
@@ -6848,6 +6829,159 @@
       ],
       "title": "deco-sites/std/packs/vtex/loaders/wishlist.ts@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+      "type": "string",
+      "format": "image-uri",
+      "title": "Image"
+    },
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9oZWFkZXIvSGVhZGVyLnRzeA==@NavItem": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "label",
+        "href"
+      ],
+      "title": "NavItem"
+    },
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9oZWFkZXIvSGVhZGVyLnRzeA==@NavItem[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9oZWFkZXIvSGVhZGVyLnRzeA==@NavItem"
+      },
+      "title": "NavItem[]"
+    },
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9oZWFkZXIvSGVhZGVyLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "logo": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Logo",
+          "title": "Logo"
+        },
+        "navItems": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9oZWFkZXIvSGVhZGVyLnRzeA==@NavItem[]",
+          "title": "Navigation items",
+          "description": "Navigation items used both on mobile and desktop menus"
+        }
+      },
+      "required": [
+        "logo"
+      ],
+      "title": "deco-sites/leadfy-me/components/header/Header.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
+      "type": "string",
+      "format": "html",
+      "title": "HTML"
+    },
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9zZWN0aW9ucy9JbnZlc3RpbWVudG8udHN4@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Section title",
+          "title": "Title"
+        },
+        "text": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Section text",
+          "title": "Text"
+        },
+        "quantityLabel": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Quantity label",
+          "title": "Quantity Label"
+        },
+        "valueLabel": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Value label",
+          "title": "Value Label"
+        },
+        "observation": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Observation text",
+          "title": "Observation"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "quantity": {
+                "type": "string",
+                "title": "Quantity"
+              },
+              "value": {
+                "type": "string",
+                "title": "Value"
+              }
+            },
+            "required": [
+              "quantity",
+              "value"
+            ]
+          },
+          "description": "Data for setting up the value rule",
+          "title": "Data"
+        },
+        "bottomOptions": {
+          "type": "object",
+          "properties": {
+            "enableButtons": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Enable Buttons"
+            },
+            "text": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Text"
+            },
+            "textPosition": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "start"
+                },
+                {
+                  "type": "string",
+                  "const": "end"
+                }
+              ],
+              "type": "string",
+              "title": "Text Position"
+            }
+          },
+          "required": [],
+          "title": "Bottom Options",
+          "description": "End of section buttons display options"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/leadfy-me/components/sections/Investimento.tsx@Props"
+    },
     "ZGVjby1jeC9saXZlL2hhbmRsZXJzL2RldlBhZ2UudHM=@DevConfig": {
       "type": "object",
       "properties": {
@@ -7158,6 +7292,170 @@
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9zZWN0aW9ucy9BbnVuY2llLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Section title",
+          "title": "Title"
+        },
+        "text": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Section text",
+          "title": "Text"
+        },
+        "socialMedias": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "title": "Title"
+              },
+              "image": {
+                "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+                "title": "Image"
+              }
+            },
+            "required": []
+          },
+          "description": "Social media cards",
+          "title": "Social Medias"
+        },
+        "bottomOptions": {
+          "type": "object",
+          "properties": {
+            "enableButtons": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Enable Buttons"
+            },
+            "text": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Text"
+            },
+            "textPosition": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "start"
+                },
+                {
+                  "type": "string",
+                  "const": "end"
+                }
+              ],
+              "type": "string",
+              "title": "Text Position"
+            }
+          },
+          "required": [],
+          "title": "Bottom Options",
+          "description": "End of section buttons display options"
+        }
+      },
+      "required": [
+        "title",
+        "text",
+        "socialMedias"
+      ],
+      "title": "deco-sites/leadfy-me/components/sections/Anuncie.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9zZWN0aW9ucy9CbG9nLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Section title",
+          "title": "Title"
+        },
+        "text": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Section text",
+          "title": "Text"
+        },
+        "posts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "image": {
+                "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+                "title": "Image"
+              },
+              "date": {
+                "type": "string",
+                "title": "Date"
+              },
+              "title": {
+                "type": "string",
+                "title": "Title"
+              },
+              "text": {
+                "type": "string",
+                "title": "Text"
+              }
+            },
+            "required": [
+              "image",
+              "date",
+              "title",
+              "text"
+            ]
+          },
+          "description": "Posts",
+          "title": "Posts"
+        },
+        "bottomOptions": {
+          "type": "object",
+          "properties": {
+            "enableButtons": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Enable Buttons"
+            },
+            "text": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Text"
+            },
+            "textPosition": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "start"
+                },
+                {
+                  "type": "string",
+                  "const": "end"
+                }
+              ],
+              "type": "string",
+              "title": "Text Position"
+            }
+          },
+          "required": [],
+          "title": "Bottom Options",
+          "description": "End of section buttons display options"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/leadfy-me/components/sections/Blog.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvRGVzaWduU3lzdGVtLnRzeA==@Colors": {
       "type": "object",
       "properties": {
@@ -7447,17 +7745,19 @@
       "properties": {
         "fontFamily": {
           "type": "string",
-          "default": "'Albert Sans'",
+          "default": "'Clash Grotesk'",
           "title": "Font Family"
         },
         "styleInnerHtml": {
-          "type": "string",
+          "type": [
+            "string",
+            "null"
+          ],
           "title": "Style Inner Html"
         }
       },
       "required": [
-        "fontFamily",
-        "styleInnerHtml"
+        "fontFamily"
       ],
       "title": "Font"
     },
@@ -7480,19 +7780,24 @@
       "required": [],
       "title": "deco-sites/leadfy-me/sections/DesignSystem.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvR2V0U3RhcnRlZC50c3g=@Props": {
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9Gb290ZXIudHN4@Props": {
       "type": "object",
       "properties": {
-        "enableInspectVSCode": {
-          "type": [
-            "boolean",
-            "null"
-          ],
-          "title": "Enable Inspect V S Code"
+        "logo": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Logo",
+          "title": "Logo"
+        },
+        "copyright": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "title": "Copyright"
         }
       },
-      "required": [],
-      "title": "deco-sites/leadfy-me/sections/GetStarted.tsx@Props"
+      "required": [
+        "logo",
+        "copyright"
+      ],
+      "title": "deco-sites/leadfy-me/components/Footer.tsx@Props"
     },
     "ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvSGVhZC50c3g=@Props": {
       "type": "object",
@@ -7531,6 +7836,144 @@
         "themeColor"
       ],
       "title": "deco-sites/leadfy-me/sections/Head.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9zZWN0aW9ucy9JbnRyby50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Section title",
+          "title": "Title"
+        },
+        "text": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Section text",
+          "title": "Text"
+        },
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Image displayed on the right side",
+          "title": "Image"
+        },
+        "bottomOptions": {
+          "type": "object",
+          "properties": {
+            "enableButtons": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Enable Buttons"
+            },
+            "text": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Text"
+            },
+            "textPosition": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "start"
+                },
+                {
+                  "type": "string",
+                  "const": "end"
+                }
+              ],
+              "type": "string",
+              "title": "Text Position"
+            }
+          },
+          "required": [],
+          "title": "Bottom Options",
+          "description": "End of section buttons display options"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/leadfy-me/components/sections/Intro.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9zZWN0aW9ucy9WZW5kYXMudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Section title",
+          "title": "Title"
+        },
+        "text": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Section text",
+          "title": "Text"
+        },
+        "cards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+                "title": "Icon"
+              },
+              "title": {
+                "type": "string",
+                "title": "Title"
+              },
+              "text": {
+                "type": "string",
+                "title": "Text"
+              }
+            },
+            "required": [
+              "icon",
+              "title",
+              "text"
+            ]
+          },
+          "description": "Cards",
+          "title": "Cards"
+        },
+        "bottomOptions": {
+          "type": "object",
+          "properties": {
+            "enableButtons": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Enable Buttons"
+            },
+            "text": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Text"
+            },
+            "textPosition": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "start"
+                },
+                {
+                  "type": "string",
+                  "const": "end"
+                }
+              ],
+              "type": "string",
+              "title": "Text Position"
+            }
+          },
+          "required": [],
+          "title": "Bottom Options",
+          "description": "End of section buttons display options"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/leadfy-me/components/sections/Vendas.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props": {
       "type": "object",
@@ -7621,11 +8064,6 @@
         "defaultLocale"
       ],
       "title": "deco-sites/std/commerce/butterCMS/client.ts@ConfigButterCMS"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
-      "type": "string",
-      "format": "image-uri",
-      "title": "Image"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null|ProductListingPage|null": {
       "anyOf": [
@@ -8141,7 +8579,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|b3aa45aaff3f13a27398fcac99067685": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@2dc3ea494e366f0c07f2bf4cd27907ef|WorkflowRef": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -8159,13 +8597,13 @@
           ]
         }
       ],
-      "title": "WorkflowRef|b3aa45aaff3f13a27398fcac99067685"
+      "title": "2dc3ea494e366f0c07f2bf4cd27907ef|WorkflowRef"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|b3aa45aaff3f13a27398fcac99067685",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@2dc3ea494e366f0c07f2bf4cd27907ef|WorkflowRef",
           "title": "Workflow"
         },
         "id": {
@@ -8614,28 +9052,6 @@
         "id"
       ],
       "title": "deco-sites/std/packs/vtex/actions/wishlist/removeItem.ts@Props"
-    },
-    "ZGVjby1zaXRlcy9sZWFkZnktbWUvZnVuY3Rpb25zL0xvYWRHaXRIdWJSYXcudHM=": {
-      "title": "GitHub Raw Loader",
-      "description": "Grabs data from a GitHub repo",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvZnVuY3Rpb25zL0xvYWRHaXRIdWJSYXcudHM=@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/leadfy-me/functions/LoadGitHubRaw.ts"
-          ],
-          "default": "deco-sites/leadfy-me/functions/LoadGitHubRaw.ts"
-        }
-      }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU0Fkcy50cw==": {
       "title": "Butter CMS Featured Ads Loader",
@@ -9616,6 +10032,48 @@
         }
       }
     },
+    "Li9pc2xhbmRzL0hlYWRlci50c3g=": {
+      "title": "./islands/Header.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9oZWFkZXIvSGVhZGVyLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/Header.tsx"
+          ],
+          "default": "./islands/Header.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL0ludmVzdGltZW50by50c3g=": {
+      "title": "./islands/Investimento.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9zZWN0aW9ucy9JbnZlc3RpbWVudG8udHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/Investimento.tsx"
+          ],
+          "default": "./islands/Investimento.tsx"
+        }
+      }
+    },
     "JGxpdmUvaGFuZGxlcnMvZGV2UGFnZS50cw==": {
       "title": "Private Fresh Page",
       "description": "Useful for pages under development.",
@@ -9851,6 +10309,48 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvQW51bmNpZS50c3g=": {
+      "title": "deco-sites/leadfy-me/sections/Anuncie.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9zZWN0aW9ucy9BbnVuY2llLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/leadfy-me/sections/Anuncie.tsx"
+          ],
+          "default": "deco-sites/leadfy-me/sections/Anuncie.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvQmxvZy50c3g=": {
+      "title": "deco-sites/leadfy-me/sections/Blog.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9zZWN0aW9ucy9CbG9nLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/leadfy-me/sections/Blog.tsx"
+          ],
+          "default": "deco-sites/leadfy-me/sections/Blog.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvRGVzaWduU3lzdGVtLnRzeA==": {
       "title": "deco-sites/leadfy-me/sections/DesignSystem.tsx",
       "type": "object",
@@ -9872,12 +10372,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvR2V0U3RhcnRlZC50c3g=": {
-      "title": "deco-sites/leadfy-me/sections/GetStarted.tsx",
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvRm9vdGVyLnRzeA==": {
+      "title": "deco-sites/leadfy-me/sections/Footer.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvR2V0U3RhcnRlZC50c3g=@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9Gb290ZXIudHN4@Props"
         }
       ],
       "required": [
@@ -9887,9 +10387,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/leadfy-me/sections/GetStarted.tsx"
+            "deco-sites/leadfy-me/sections/Footer.tsx"
           ],
-          "default": "deco-sites/leadfy-me/sections/GetStarted.tsx"
+          "default": "deco-sites/leadfy-me/sections/Footer.tsx"
         }
       }
     },
@@ -9911,6 +10411,90 @@
             "deco-sites/leadfy-me/sections/Head.tsx"
           ],
           "default": "deco-sites/leadfy-me/sections/Head.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvSGVhZGVyLnRzeA==": {
+      "title": "deco-sites/leadfy-me/sections/Header.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9oZWFkZXIvSGVhZGVyLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/leadfy-me/sections/Header.tsx"
+          ],
+          "default": "deco-sites/leadfy-me/sections/Header.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvSW50cm8udHN4": {
+      "title": "deco-sites/leadfy-me/sections/Intro.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9zZWN0aW9ucy9JbnRyby50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/leadfy-me/sections/Intro.tsx"
+          ],
+          "default": "deco-sites/leadfy-me/sections/Intro.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvSW52ZXN0aW1lbnRvLnRzeA==": {
+      "title": "deco-sites/leadfy-me/sections/Investimento.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9zZWN0aW9ucy9JbnZlc3RpbWVudG8udHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/leadfy-me/sections/Investimento.tsx"
+          ],
+          "default": "deco-sites/leadfy-me/sections/Investimento.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvVmVuZGFzLnRzeA==": {
+      "title": "deco-sites/leadfy-me/sections/Vendas.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvY29tcG9uZW50cy9zZWN0aW9ucy9WZW5kYXMudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/leadfy-me/sections/Vendas.tsx"
+          ],
+          "default": "deco-sites/leadfy-me/sections/Vendas.tsx"
         }
       }
     },
@@ -10808,9 +11392,6 @@
           "$ref": "#/definitions/Resolvable"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvZnVuY3Rpb25zL0xvYWRHaXRIdWJSYXcudHM="
-        },
-        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU0Fkcy50cw=="
         },
         {
@@ -10978,7 +11559,17 @@
     },
     "islands": {
       "title": "islands",
-      "anyOf": []
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlci50c3g="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0ludmVzdGltZW50by50c3g="
+        }
+      ]
     },
     "handlers": {
       "title": "handlers",
@@ -11036,13 +11627,31 @@
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvQW51bmNpZS50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvQmxvZy50c3g="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvRGVzaWduU3lzdGVtLnRzeA=="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvR2V0U3RhcnRlZC50c3g="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvRm9vdGVyLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvSGVhZC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvSGVhZGVyLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvSW50cm8udHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvSW52ZXN0aW1lbnRvLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9sZWFkZnktbWUvc2VjdGlvbnMvVmVuZGFzLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvQW5hbHl0aWNzLnRzeA=="

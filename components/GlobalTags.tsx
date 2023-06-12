@@ -27,6 +27,9 @@ function GlobalTags() {
 
       {/* Web Manifest */}
       <link rel="manifest" href={asset("/site.webmanifest")} />
+
+      {/* Custom styles and fonts */}
+      <link href={asset("/custom.css")} rel="stylesheet" />
     </Head>
   );
 }

@@ -10,5 +10,8 @@
   "editor.defaultFormatter": "denoland.vscode-deno",
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "[postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

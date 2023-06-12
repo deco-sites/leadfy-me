@@ -15,7 +15,7 @@ export interface Colors {
    * @format color
    * @default #003232
    */
-  "primary": string;
+  primary: string;
   /**
    * @format color
    * @description Will be a darker tone of primary if not specified
@@ -31,7 +31,7 @@ export interface Colors {
    * @format color
    * @default #8C3D3D
    */
-  "secondary": string;
+  secondary: string;
   /**
    * @format color
    * @description Will be a darker tone of secondary if not specified
@@ -47,7 +47,7 @@ export interface Colors {
    * @format color
    * @default #00FF7F
    */
-  "accent": string;
+  accent: string;
   /**
    * @format color
    * @description Will be a darker tone of accent if not specified
@@ -63,7 +63,7 @@ export interface Colors {
    * @format color
    * @default #333333
    */
-  "neutral": string;
+  neutral: string;
   /**
    * @format color
    * @description Will be a darker tone of neutral if not specified
@@ -100,7 +100,7 @@ export interface Colors {
    * @format color
    * @default #EAFAF2
    */
-  "success": string;
+  success: string;
   /**
    * @format color
    * @description Will be a readable success of neutral if not specified
@@ -111,7 +111,7 @@ export interface Colors {
    * @format color
    * @default #FFF8E6
    */
-  "warning": string;
+  warning: string;
   /**
    * @format color
    * @description Will be a readable tone of warning if not specified
@@ -122,7 +122,7 @@ export interface Colors {
    * @format color
    * @default #FFE9E5
    */
-  "error": string;
+  error: string;
   /**
    * @format color
    * @description Will be a readable tone of error if not specified
@@ -133,7 +133,7 @@ export interface Colors {
    * @format color
    * @default #F0F5FF
    */
-  "info": string;
+  info: string;
   /**
    * @format color
    * @description Will be a readable tone of info if not specified
@@ -206,14 +206,10 @@ export interface Miscellaneous {
 
 export interface Font {
   /**
-   * @default 'Albert Sans'
+   * @default 'Clash Grotesk'
    */
   fontFamily: string;
-  /**
-   * @default @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;700&display=swap');
-   * \@format css
-   */
-  styleInnerHtml: string;
+  styleInnerHtml?: string;
 }
 
 export interface Props {
@@ -231,8 +227,8 @@ const contrasted = (color: string, percentage = 0.8) => {
   const c = Color.string(color);
 
   return c.isDark()
-    ? c.mix(Color.rgb(255, 255, 255), percentage).saturate(.1)
-    : c.mix(Color.rgb(0, 0, 0), percentage).saturate(.1);
+    ? c.mix(Color.rgb(255, 255, 255), percentage).saturate(0.1)
+    : c.mix(Color.rgb(0, 0, 0), percentage).saturate(0.1);
 };
 
 const toVariables = (t: Theme): [string, string][] => {
@@ -305,9 +301,7 @@ function Section({
   colors,
   miscellaneous,
   fonts = {
-    fontFamily: "Albert Sans",
-    styleInnerHtml:
-      "@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;700&display=swap');",
+    fontFamily: "Clash Grotesk Regular",
   },
 }: Props) {
   const id = useId();
@@ -320,10 +314,12 @@ function Section({
     <Head>
       <meta name="theme-color" content={theme["primary"]} />
       <meta name="msapplication-TileColor" content={theme["primary"]} />
-      <style
-        id={`__DESIGN_SYSTEM_FONT-${id}`}
-        dangerouslySetInnerHTML={{ __html: fonts.styleInnerHtml }}
-      />
+      {!!fonts?.styleInnerHtml && (
+        <style
+          id={`__DESIGN_SYSTEM_FONT-${id}`}
+          dangerouslySetInnerHTML={{ __html: fonts.styleInnerHtml }}
+        />
+      )}
       <style
         id={`__DESIGN_SYSTEM_VARS-${id}`}
         dangerouslySetInnerHTML={{
@@ -375,8 +371,9 @@ export function Preview(props: Props) {
               </div>
             </div>{" "}
             <div class="flex flex-col gap-3 md:w-1/2">
-              <progress value="20" max="100" class="progress">Default</progress>
-              {" "}
+              <progress value="20" max="100" class="progress">
+                Default
+              </progress>{" "}
               <progress value="25" max="100" class="progress progress-primary">
                 Primary
               </progress>{" "}
@@ -437,8 +434,7 @@ export function Preview(props: Props) {
               <div>
                 <input type="checkbox" class="checkbox" />{" "}
                 <input type="checkbox" class="checkbox checkbox-primary" />{" "}
-                <input type="checkbox" class="checkbox checkbox-secondary" />
-                {" "}
+                <input type="checkbox" class="checkbox checkbox-secondary" />{" "}
                 <input type="checkbox" class="checkbox checkbox-accent" />
               </div>{" "}
               <div>
@@ -457,8 +453,7 @@ export function Preview(props: Props) {
               </div>
             </div>{" "}
             <div class="md:w-1/2">
-              <input type="range" min="0" max="100" class="range range-xs" />
-              {" "}
+              <input type="range" min="0" max="100" class="range range-xs" />{" "}
               <input
                 type="range"
                 min="0"
@@ -566,8 +561,7 @@ export function Preview(props: Props) {
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                >
-                </path>
+                ></path>
               </svg>{" "}
               <span>12 unread messages. Tap to see.</span>
             </div>
@@ -585,8 +579,7 @@ export function Preview(props: Props) {
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                >
-                </path>
+                ></path>
               </svg>{" "}
               <span>New software update available.</span>
             </div>
@@ -604,8 +597,7 @@ export function Preview(props: Props) {
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                >
-                </path>
+                ></path>
               </svg>{" "}
               <span>Your purchase has been confirmed!</span>
             </div>
@@ -623,8 +615,7 @@ export function Preview(props: Props) {
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                >
-                </path>
+                ></path>
               </svg>{" "}
               <span>Warning: Invalid email address!</span>
             </div>
@@ -642,8 +633,7 @@ export function Preview(props: Props) {
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                >
-                </path>
+                ></path>
               </svg>{" "}
               <span>Error! Task failed successfully.</span>
             </div>
