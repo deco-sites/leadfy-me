@@ -30,15 +30,15 @@ function NavItem({ item, onClick }: Props) {
   };
 
   return (
-    <li>
+    <div>
       <a
         href={href}
         onClick={handleClick}
-        class="font-['clash_grotesk_regular'] font-semibold text-[#1B1B1B] text-[20px]  block relative p-3 m-0 transition-[color] duration-200 ease-in-out tracking-[.03em] uppercase antialiased max-md:font-normal max-md:leading-[1.5em] max-md:py-[12px]"
+        class="font-['clash_grotesk_regular'] font-semibold text-[#1B1B1B] text-[20px]  block relative p-3 m-0 transition-[color] duration-200 ease-in-out tracking-[.03em] uppercase antialiased max-md:font-normal max-md:leading-[1.5em] max-md:py-[12px] hover:bg-[#181818] hover:text-[#FDFFF1]"
       >
         {label}
       </a>
-    </li>
+    </div>
   );
 }
 

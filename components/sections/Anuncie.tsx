@@ -1,4 +1,4 @@
-import { Picture } from "deco-sites/std/components/Picture.tsx";
+import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 
 import SectionTitle from "deco-sites/leadfy-me/components/ui/SectionTitle.tsx";
 import SectionText from "deco-sites/leadfy-me/components/ui/SectionText.tsx";
@@ -63,6 +63,12 @@ function Anuncie({ title, text, socialMedias, bottomOptions }: Props) {
                 )}
                 {!!social?.image && (
                   <Picture>
+                    <Source
+                      fetchPriority="low"
+                      src={social.image}
+                      width={index === 1 ? 178 : 128}
+                      height={index === 1 ? 178 : 128}
+                    />
                     <img
                       class="mx-auto"
                       loading="lazy"

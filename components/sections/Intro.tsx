@@ -1,3 +1,4 @@
+import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import BottomButtons from "deco-sites/leadfy-me/components/ui/BottomOptions.tsx";
 import type { HTML, Image } from "deco-sites/std/components/types.ts";
 
@@ -58,10 +59,17 @@ function Intro({ title, text, image, bottomOptions }: Props) {
       </div>
 
       {image && (
-        <div
-          style={{ "--image-url": `url(${image})` }}
-          class="bg-[image:var(--image-url)] bg-cover bg-no-repeat bg-scroll bg-[50% 50%] max-md:h-[50vw] max-md:mb-[10%]"
-        />
+        <div class="max-md:h-[50vw] max-md:mb-[10%]">
+          <Picture class="w-full h-full flex">
+            <Source fetchPriority="high" src={image} width={922} height={402} />
+            <img
+              loading="eager"
+              src={image}
+              alt="banner principal"
+              class="object-cover h-auto w-full"
+            />
+          </Picture>
+        </div>
       )}
     </div>
   );

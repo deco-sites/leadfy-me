@@ -69,7 +69,7 @@ function Navbar({ logo, items }: { logo: Image; items: INavItem[] }) {
         </button>
       )}
 
-      <ul
+      <div
         class={`flex max-md:h-full max-md:w-[300px] max-md:pt-[60px] max-md:px-[25px] max-md:pb-[25px] max-md:text-[#181818] max-md:overflow-y-auto max-md:fixed max-md:top-0 max-md:z-[9999] max-md:transition-[left,right,top,bottom,width,transform,opacity] max-md:duration-200 max-md:ease-in-out max-md:origin-right max-md:right-[-300px] max-md:bg-[#DAFF01] max-md:opacity-0 max-md:block ${
           displayMenu.value
             ? "!right-0 !shadow-[-6px_0_20px_5px_rgba(0,0,0,0.1)] !opacity-100"
@@ -112,7 +112,7 @@ function Navbar({ logo, items }: { logo: Image; items: INavItem[] }) {
         <div class="flex max-md:mt-4 max-md:mb-6 max-md:block">
           {items.map((item) => <NavItem item={item} onClick={closeMenu} />)}
         </div>
-      </ul>
+      </div>
 
       {displayMenu.value && (
         <div class="after:content-[''] after:bg-[rgba(206,206,206,.8)] after:w-screen after:h-[100vh] after:fixed after:top-0 after:backdrop-blur-md after:-z-1 after:left-0" />

@@ -1,7 +1,7 @@
 import BottomOptions from "deco-sites/leadfy-me/components/ui/BottomOptions.tsx";
 import SectionTitle from "deco-sites/leadfy-me/components/ui/SectionTitle.tsx";
 import SectionText from "deco-sites/leadfy-me/components/ui/SectionText.tsx";
-import { Picture } from "deco-sites/std/components/Picture.tsx";
+import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 
 import type { HTML, Image } from "deco-sites/std/components/types.ts";
 
@@ -50,6 +50,12 @@ function Vendas({ title, text, cards, bottomOptions }: Props) {
                 <div class="bg-[#1B1B1B] pt-6 pl-6 pb-8 pr-9 max-md:mb-[30px]">
                   <div class="min-h-[45.4px]">
                     <Picture>
+                      <Source
+                        fetchPriority="low"
+                        src={card.icon}
+                        width={37}
+                        height={37}
+                      />
                       <img
                         loading="lazy"
                         src={card.icon}

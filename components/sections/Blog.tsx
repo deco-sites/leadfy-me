@@ -1,4 +1,4 @@
-import { Picture } from "deco-sites/std/components/Picture.tsx";
+import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 
 import SectionTitle from "deco-sites/leadfy-me/components/ui/SectionTitle.tsx";
 import SectionText from "deco-sites/leadfy-me/components/ui/SectionText.tsx";
@@ -59,6 +59,12 @@ function Blog({ title, text, posts, bottomOptions }: Props) {
                 <div class="mb-8 border-[#1b1b1b66] border-[0.5px] h-fit">
                   <div class="relative mb-4">
                     <Picture>
+                      <Source
+                        fetchPriority="low"
+                        src={post.image}
+                        width={360}
+                        height={206}
+                      />
                       <img loading="lazy" src={post.image} alt={post.title} />
                     </Picture>
                   </div>
